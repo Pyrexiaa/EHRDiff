@@ -67,7 +67,7 @@ def main(config):
                 gfile_stream = open(os.path.join(workdir, 'stdout.txt'), 'w')
             else:
                 if not os.path.exists(workdir):
-                    raise ValueError('Working directoy does not exist.')
+                    raise ValueError('Working directory does not exist.')
                 gfile_stream = open(os.path.join(workdir, 'stdout.txt'), 'a')
 
             set_logger(gfile_stream)
