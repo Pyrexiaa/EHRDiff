@@ -8,7 +8,7 @@ setup:
   master_port: 60202
   omp_n_threads: 64
 data:
-  path: "datasets/ppum/tri3_add_on_fits_india.npy"
+  path: "datasets/mimic/X_num_train.npy"
   name: mimic
   resolution: 1782
   dataloader_params:

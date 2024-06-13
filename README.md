@@ -54,5 +54,3 @@ Note that we modify the code from the DPDM repo, with which we attempt to equip 
 # Acknowledgements
 Parts of our codes are modified from [DPDM](https://github.com/nv-tlabs/DPDM) and [edm](https://github.com/NVlabs/edm).
 
-# Run the following code
-python main.py --mode train --workdir results/mimic --config configs/mimic/train_edm.yaml 

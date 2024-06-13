@@ -1,0 +1,49 @@
+INFO - main.py - 2024-06-12 22:58:19,927 - {'setup': {'runner': 'train_dpdm_base', 'CUDA_DEVICES': 0, 'n_gpus_per_node': 1, 'n_nodes': 1, 'node_rank': 0, 'master_address': '127.0.0.1', 'master_port': 60202, 'omp_n_threads': 64, 'workdir': 'results/mimic', 'mode': 'train', 'root_folder': '.', 'local_rank': 0, 'global_rank': 0, 'global_size': 1}, 'data': {'path': 'datasets/mimic/X_num_train.npy', 'name': 'mimic', 'resolution': 1782, 'dataloader_params': {'num_workers': 1}, 'n_classes': 'None'}, 'model': {'denoiser_name': 'edm', 'denoiser_network': 'song', 'ema_rate': 0.999, 'params': {'sigma_data': 0.14, 'sigma_min': 0.02, 'sigma_max': 80.0}, 'network': {'z_dim': 1782, 'time_dim': 384, 'unit_dims': [1024, 384, 384, 384, 1024], 'use_cfg': False}}, 'optim': {'optimizer': 'AdamW', 'params': {'lr': 0.0003, 'weight_decay': 0.0}}, 'sampler': {'solver': 'heun', 'discretization': 'edm', 'stochastic': False, 'num_steps': 32, 'sigma_min': 0.02, 'sigma_max': 80.0, 'rho': 7.0, 'guid_scale': 'None'}, 'train': {'seed': 2023, 'batch_size': 1024, 'warmup_steps': 20000, 'n_epochs': 5000, 'check_freq': 5000, 'save_freq': 20000}, 'loss': {'version': 'edm', 'p_mean': -1.2, 'p_std': 1.2, 'sigma_data': 0.14, 'n_classes': 'None'}, 'dp': {'do': False}}
+INFO - train_dpdm_base.py - 2024-06-12 22:58:26,493 - Number of trainable parameters in model: 7486444
+INFO - train_dpdm_base.py - 2024-06-12 22:58:26,493 - Number of total epochs: 5000
+INFO - train_dpdm_base.py - 2024-06-12 22:58:26,494 - Starting training at step 0
+INFO - distributed.py - 2024-06-12 22:58:26,533 - Reducer buckets have been rebuilt in this iteration.
+INFO - train_dpdm_base.py - 2024-06-12 22:59:52,690 - [122,  5001] Loss: 0.5258110166
+INFO - train_dpdm_base.py - 2024-06-12 22:59:54,212 - corr: 0.9209, none-zero columns: 1782
+INFO - train_dpdm_base.py - 2024-06-12 23:01:20,030 - [244, 10001] Loss: 0.4788774550
+INFO - train_dpdm_base.py - 2024-06-12 23:01:21,462 - corr: 0.9630, none-zero columns: 1782
+INFO - train_dpdm_base.py - 2024-06-12 23:02:50,650 - [366, 15001] Loss: 0.4796299338
+INFO - train_dpdm_base.py - 2024-06-12 23:02:52,389 - corr: 0.9804, none-zero columns: 1782
+INFO - train_dpdm_base.py - 2024-06-12 23:04:17,217 - [488, 20001] Loss: 0.4603862166
+INFO - train_dpdm_base.py - 2024-06-12 23:04:18,591 - corr: 0.9880, none-zero columns: 1781
+INFO - train_dpdm_base.py - 2024-06-12 23:04:19,130 - Saving checkpoint at iteration 20000
+INFO - train_dpdm_base.py - 2024-06-12 23:04:19,130 - --------------------------------------------
+INFO - train_dpdm_base.py - 2024-06-12 23:05:44,554 - [610, 25001] Loss: 0.4714321196
+INFO - train_dpdm_base.py - 2024-06-12 23:05:45,794 - corr: 0.9913, none-zero columns: 1782
+INFO - train_dpdm_base.py - 2024-06-12 23:07:12,567 - [732, 30001] Loss: 0.4649786651
+INFO - train_dpdm_base.py - 2024-06-12 23:07:13,952 - corr: 0.9936, none-zero columns: 1782
+INFO - train_dpdm_base.py - 2024-06-12 23:08:40,387 - [854, 35001] Loss: 0.4545460343
+INFO - train_dpdm_base.py - 2024-06-12 23:08:41,757 - corr: 0.9949, none-zero columns: 1782
+INFO - train_dpdm_base.py - 2024-06-12 23:10:06,494 - [976, 40001] Loss: 0.4363073409
+INFO - train_dpdm_base.py - 2024-06-12 23:10:07,994 - corr: 0.9962, none-zero columns: 1779
+INFO - train_dpdm_base.py - 2024-06-12 23:10:08,469 - Saving checkpoint at iteration 40000
+INFO - train_dpdm_base.py - 2024-06-12 23:10:08,469 - --------------------------------------------
+INFO - train_dpdm_base.py - 2024-06-12 23:11:34,187 - [1098, 45001] Loss: 0.4412538111
+INFO - train_dpdm_base.py - 2024-06-12 23:11:35,706 - corr: 0.9972, none-zero columns: 1778
+INFO - train_dpdm_base.py - 2024-06-12 23:13:02,648 - [1220, 50001] Loss: 0.4485387802
+INFO - train_dpdm_base.py - 2024-06-12 23:13:03,934 - corr: 0.9977, none-zero columns: 1777
+INFO - train_dpdm_base.py - 2024-06-12 23:14:28,859 - [1342, 55001] Loss: 0.4327141941
+INFO - train_dpdm_base.py - 2024-06-12 23:14:30,289 - corr: 0.9978, none-zero columns: 1777
+INFO - train_dpdm_base.py - 2024-06-12 23:15:56,750 - [1464, 60001] Loss: 0.4441629350
+INFO - train_dpdm_base.py - 2024-06-12 23:15:58,286 - corr: 0.9980, none-zero columns: 1777
+INFO - train_dpdm_base.py - 2024-06-12 23:15:58,773 - Saving checkpoint at iteration 60000
+INFO - train_dpdm_base.py - 2024-06-12 23:15:58,773 - --------------------------------------------
+INFO - train_dpdm_base.py - 2024-06-12 23:17:27,133 - [1586, 65001] Loss: 0.4314987659
+INFO - train_dpdm_base.py - 2024-06-12 23:17:28,444 - corr: 0.9983, none-zero columns: 1777
+INFO - train_dpdm_base.py - 2024-06-12 23:18:54,892 - [1708, 70001] Loss: 0.4448248148
+INFO - train_dpdm_base.py - 2024-06-12 23:18:56,344 - corr: 0.9981, none-zero columns: 1776
+INFO - train_dpdm_base.py - 2024-06-12 23:20:23,246 - [1830, 75001] Loss: 0.4447880685
+INFO - train_dpdm_base.py - 2024-06-12 23:20:24,714 - corr: 0.9983, none-zero columns: 1775
+INFO - train_dpdm_base.py - 2024-06-12 23:21:50,559 - [1952, 80001] Loss: 0.4237577319
+INFO - train_dpdm_base.py - 2024-06-12 23:21:51,910 - corr: 0.9983, none-zero columns: 1774
+INFO - train_dpdm_base.py - 2024-06-12 23:21:52,435 - Saving checkpoint at iteration 80000
+INFO - train_dpdm_base.py - 2024-06-12 23:21:52,435 - --------------------------------------------
+INFO - train_dpdm_base.py - 2024-06-12 23:23:16,884 - [2074, 85001] Loss: 0.4165591598
+INFO - train_dpdm_base.py - 2024-06-12 23:23:18,337 - corr: 0.9984, none-zero columns: 1773
+INFO - train_dpdm_base.py - 2024-06-12 23:24:43,682 - [2196, 90001] Loss: 0.4499182105
+INFO - train_dpdm_base.py - 2024-06-12 23:24:45,116 - corr: 0.9984, none-zero columns: 1775

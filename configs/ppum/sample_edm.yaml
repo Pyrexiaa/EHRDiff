@@ -1,5 +1,5 @@
 setup:
-  runner: train_dpdm_base
+  runner: generate_base
   CUDA_DEVICES: 0
   n_gpus_per_node: 1
   n_nodes: 1
@@ -8,16 +8,14 @@ setup:
   master_port: 60202
   omp_n_threads: 64
 data:
-  path: "datasets/ppum/tri3_add_on_fits_india.npy"
-  name: mimic
   resolution: 1782
-  dataloader_params:
-    num_workers: 1
   n_classes: None
 model:
+  ckpt: ".../checkpoints/final_checkpoint.pth"
   denoiser_name: edm
   denoiser_network: song
   ema_rate: .999
+  use_ema: True
   params:
     sigma_data: 0.14
     sigma_min: .02
@@ -27,11 +25,6 @@ model:
     time_dim: 384
     unit_dims: [1024, 384, 384, 384, 1024]
     use_cfg: False
-optim:
-  optimizer: AdamW
-  params:
-    lr: 3e-4
-    weight_decay: 0.
 sampler:
   solver: 'heun'
   discretization: 'edm'
@@ -41,18 +34,9 @@ sampler:
   sigma_max: 80.
   rho: 7.
   guid_scale: None
-train:
+test:
+  type: 'binary'
+  labels: None
+  batch_size: 41000
+  n_samples: 41000
   seed: 2023
-  batch_size: 1024
-  warmup_steps: 20000
-  n_epochs: 5000
-  check_freq: 5000
-  save_freq: 20000
-loss: 
-  version: edm
-  p_mean: -1.2
-  p_std: 1.2
-  sigma_data: 0.14
-  n_classes: None
-dp:
-  do: False
